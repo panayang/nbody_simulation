@@ -1,0 +1,17 @@
+[package]
+name = "nbody_simulation"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+glam = "0.27.0" # 用于高效的向量运算
+rayon = "1.10.0" # 用于并行化计算
+plotters = "0.3.5" # 用于绘图
+indicatif = "0.17.8" # 用于显示进度条
+
+[profile.release]
+lto = true
+codegen-units = 1
+panic = "abort"
